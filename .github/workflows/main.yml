@@ -17,6 +17,8 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2 # This step checks out the repository
       - name: Output the name of the event that triggered the workflow
         run: echo "Event name:${{ github.event_name }}"
       - name: Output the name of the branch
