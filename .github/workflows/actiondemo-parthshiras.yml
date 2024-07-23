@@ -20,9 +20,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2 # this step checks out the repository that you are working from
       - name: Output the name of the event that triggered my workflow
-        run: echo "Event name: ${{ github.event_name }}"
+        run: echo "Event name:${{ github.event_name }}"
       - name: Output the name of the branch
-        uses: echo "Branch name: $(echo ${{ github.ref }})"
+        run: echo "Branch name:$(echo ${{ github.ref }} | sed 's/refs\/heads\///')"
       - name: List all the files in the repository
         run: |
           echo "List of files:" 
